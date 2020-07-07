@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import CustomChips from 'react-custom-chips'
 import styled from 'styled-components'
 import './App.css';
 
@@ -26,19 +27,6 @@ function App() {
     margin-top: 10px;
     align-items: center;
     justify-content: center;
-  `
-
-  const filterWrapper = styled.div`
-  
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  `
-  const sortFilter = styled.select`
-  
-    border: none;
-    outline: none;
-    height: 20px;
   `
 
 
@@ -76,8 +64,7 @@ function App() {
 
   }, [searchValue])
 
-  
-  
+
 
 
   return (
@@ -85,7 +72,6 @@ function App() {
       <Title>Foodie <span role="img" aria-label="img">🍕🍔🍟</span></Title>
 
       <Search setSearchValue={setSearchValue} />
-      
       
       <ListWrapper>
         {

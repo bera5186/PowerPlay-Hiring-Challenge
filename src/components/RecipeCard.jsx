@@ -33,11 +33,6 @@ const RecipeCard = ({ title, calories, image, ingredients, url , fat, carbs, pro
         tags.push({text:'Regular 🍚🍚', id: tags.length + 1})
     }
 
-    // const tagItems = tags.map(tag => {
-    //     <li>{tag}</li>
-    // })
-
-    console.log(tags)
 
     const RecipeCard = styled.div`
 
