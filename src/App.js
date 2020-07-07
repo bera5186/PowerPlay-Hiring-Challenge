@@ -7,6 +7,7 @@ import Search from './components/Search'
 
 // keys
 import keys from './keys'
+import RecipeList from './components/RecipeList';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
   // state variables 
   const [recipies, setRecipies] = useState([])
   const [searchValue, setSearchValue] = useState('idli') // state variable for search box
-  const [loaded, setLoaded] = useState(false) // state variable for loading
+  const [loading, setLoading] = useState(true) // state variable for loading
   
 
 
@@ -28,15 +29,20 @@ function App() {
   useEffect(() => {
 
     const fetchRecipes = async () => {
+
+      // set loading state to true
+      setLoading(true)
+
+      // fetch data from API and set to state Variable
       const response = await fetch(request)
       const data = await  response.json()
       setRecipies(data.hits)
       
       // set data has been loaded
-      setLoaded(true)
+      setLoading(false)
     }
 
-    // fetchRecipes()
+    fetchRecipes()
 
   }, [searchValue])
 
@@ -49,7 +55,7 @@ function App() {
 
       <Search setSearchValue={setSearchValue} />
 
-
+      <RecipeList loading={loading} />
     </div>
   );
 }
