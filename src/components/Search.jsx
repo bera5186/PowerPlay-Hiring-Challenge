@@ -26,20 +26,19 @@ const Search = ({ setSearchValue }) => {
         border: none;
         font-size: 20px;
         font-family: inherit;
-        background-color: #f4f2f2;
+        background-color: #faf9f9;
         transition: all .2s;
         margin-right: -35px;
 
         &:focus {
             width: 70%;
-            background-color: #f0eeee;
         }
 
     `
     const SearchButton = styled.button`
 
         border: none;
-        background-color: #f4f2f2f2;
+        background-color: #faf9f9;
     
     `
 
